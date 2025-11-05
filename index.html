@@ -481,7 +481,7 @@
         <div class="container">
             <h2 class="section-title">Academic Excellence</h2>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
+                <a href="teaching.html" class="portfolio-item" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-img">🎓</div>
                     <div class="portfolio-content">
                         <h3>Teaching</h3>
@@ -492,8 +492,8 @@
                             <span class="tag">AI Integration</span>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio-item">
+                </a>
+                <a href="scholarship.html" class="portfolio-item" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-img">📚</div>
                     <div class="portfolio-content">
                         <h3>Scholarship</h3>
@@ -504,8 +504,8 @@
                             <span class="tag">Digital Health</span>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio-item">
+                </a>
+                <a href="continuing-preparation.html" class="portfolio-item" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-img">📈</div>
                     <div class="portfolio-content">
                         <h3>Evidence of Continuing Preparation</h3>
@@ -516,8 +516,8 @@
                             <span class="tag">Tableau</span>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio-item">
+                </a>
+                <a href="service-student.html" class="portfolio-item" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-img">👥</div>
                     <div class="portfolio-content">
                         <h3>Service to Student</h3>
@@ -528,8 +528,8 @@
                             <span class="tag">Student Success</span>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio-item">
+                </a>
+                <a href="service-university.html" class="portfolio-item" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-img">🏛️</div>
                     <div class="portfolio-content">
                         <h3>Service to the University</h3>
@@ -540,7 +540,7 @@
                             <span class="tag">Institutional Service</span>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -616,7 +616,15 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.timeline-item, .portfolio-item, .skill-item').forEach(el => {
+        document.querySelectorAll('.timeline-item, .skill-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Animate portfolio items differently since they're now links
+        document.querySelectorAll('.portfolio-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
