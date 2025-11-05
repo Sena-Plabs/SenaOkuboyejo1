@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sena Okuboyejo - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #2563eb;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2563eb;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2563eb;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: #f8fafc;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #2563eb;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #2563eb;
+            border-radius: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .timeline-content h3 {
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-content h3 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 0.25rem 0.75rem;
+            background: #e0e7ff;
+            color: #2563eb;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #1e293b;
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+
+        .contact-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Sena Okuboyejo</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Bridging Data, Design & Strategy</h1>
+                <p class="subtitle">Assistant Professor • Product Owner • Analytics Storyteller</p>
+                <p>I create meaningful impact through technology, behavior change, and equitable access in higher education and beyond.</p>
+                <div class="cta-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-img" style="background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">👩🏫</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div>
+                    <h3>Professional Overview</h3>
+                    <p>I bridge the worlds of data, design, and human-centered strategy to create meaningful impact in higher education and beyond.</p>
+                    <p>My research intersects technology, behavior change, and equitable access, with a focus on digital health interventions, AI-driven user experience, and analytics for improvement.</p>
+                </div>
+                <div class="skills">
+                    <div class="skill-item">
+                        <strong>Product Ownership</strong>
+                        <p>Agile methodologies & strategic planning</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>Data Analytics</strong>
+                        <p>BI, storytelling & visualization</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>UX Research</strong>
+                        <p>Human-centered design & testing</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>AI Integration</strong>
+                        <p>Workflow automation & optimization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Assistant Professor</h3>
+                        <div class="date">2022 - Present</div>
+                        <p>Teaching MIS courses with emphasis on equity-centered pedagogy, data storytelling, and AI integration. Developed innovative curriculum including "Data Detectives" project.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Certified Scrum Product Owner (CSPO)</h3>
+                        <div class="date">2024</div>
+                        <p>Advanced training in agile methodologies and product management strategies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Google AI in Education Certification</h3>
+                        <div class="date">2024</div>
+                        <p>Specialized training in AI applications for educational technology and workflow automation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Tableau Explorer Certification</h3>
+                        <div class="date">2023</div>
+                        <p>Advanced data visualization and business intelligence platform expertise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">📊</div>
+                    <div class="portfolio-content">
+                        <h3>Data Detectives Project</h3>
+                        <p>Equity-centered analytics curriculum helping students investigate educational disparities through data storytelling and business intelligence tools.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Equity</span>
+                            <span class="tag">Pedagogy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">🤖</div>
+                    <div class="portfolio-content">
+                        <h3>AI Workflow Automation</h3>
+                        <p>Streamlined academic processes through intelligent automation, including AI-powered grading systems and feedback loops.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">Automation</span>
+                            <span class="tag">Education</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">💊</div>
+                    <div class="portfolio-content">
+                        <h3>Digital Health Interventions</h3>
+                        <p>Research on digital nudges for medication adherence and sleep behavior improvement through mobile health applications.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Health Tech</span>
+                            <span class="tag">UX Research</span>
+                            <span class="tag">Behavior Change</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">🎨</div>
+                    <div class="portfolio-content">
+                        <h3>Healthcare UX Design Sprint</h3>
+                        <p>Redesigned patient intake processes for improved accessibility and cultural responsiveness using human-centered design principles.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">UX Design</span>
+                            <span class="tag">Healthcare</span>
+                            <span class="tag">Accessibility</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">📚</div>
+                    <div class="portfolio-content">
+                        <h3>Research Publications</h3>
+                        <p>Conference presentations and journal submissions on AI workflows, digital health, and equity-centered analytics in education.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Research</span>
+                            <span class="tag">Publications</span>
+                            <span class="tag">Academia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">🛠️</div>
+                    <div class="portfolio-content">
+                        <h3>Faculty Service & Leadership</h3>
+                        <p>Committee leadership including ERP faculty search co-chair, DEI initiatives, and curriculum development for AI integration.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Leadership</span>
+                            <span class="tag">Service</span>
+                            <span class="tag">DEI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Ready to collaborate on innovative projects that bridge technology and human-centered design?</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:sena.okuboyejo@university.edu">sena.okuboyejo@university.edu</a>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/senaokuboyejo" target="_blank">Connect with me</a>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📅</div>
+                    <h3>Schedule</h3>
+                    <a href="https://calendly.com/senaokuboyejo" target="_blank">Book a meeting</a>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🎓</div>
+                    <h3>Office Hours</h3>
+                    <a href="#contact">Tuesdays & Thursdays 2-4 PM</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.timeline-item, .portfolio-item, .skill-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
