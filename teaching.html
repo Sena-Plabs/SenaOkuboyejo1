@@ -72,42 +72,115 @@
         }
 
         .content {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
         }
 
-        .section {
-            margin-bottom: 3rem;
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
         }
 
-        .section h2 {
+        .year-nav {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .year-nav h3 {
             color: #2563eb;
             margin-bottom: 1rem;
-            font-size: 1.8rem;
+            font-size: 1.1rem;
         }
 
-        .section p {
+        .year-nav ul {
+            list-style: none;
+        }
+
+        .year-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .year-nav a {
+            color: #666;
+            text-decoration: none;
+            padding: 0.5rem;
+            display: block;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .year-nav a:hover,
+        .year-nav a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .main-content {
+            min-height: 100vh;
+        }
+
+        .year-section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .year-title {
+            color: #2563eb;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e0e7ff;
+            padding-bottom: 1rem;
+        }
+
+        .subsection {
+            margin-bottom: 2rem;
+        }
+
+        .subsection h3 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .subsection p {
             margin-bottom: 1rem;
             color: #666;
         }
 
-        .tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+        .course-list {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
         }
 
-        .tag {
-            padding: 0.5rem 1rem;
-            background: #e0e7ff;
-            color: #2563eb;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .course-item {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #2563eb;
         }
 
         @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
@@ -137,30 +210,191 @@
     </section>
 
     <div class="content">
-        <div class="section">
-            <h2>Overview</h2>
-            <p>My teaching philosophy centers on equity-centered pedagogy, AI integration in MIS courses, and fostering critical thinking through innovative projects like the acclaimed "Data Detectives" initiative.</p>
+        <div class="sidebar">
+            <div class="year-nav">
+                <h3>Academic Years</h3>
+                <ul>
+                    <li><a href="#ay2022-2023" class="active">AY 2022-2023</a></li>
+                    <li><a href="#ay2023-2024">AY 2023-2024</a></li>
+                    <li><a href="#ay2024-2025">AY 2024-2025</a></li>
+                    <li><a href="#ay2025-2026">AY 2025-2026</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>Key Initiatives</h2>
-            <p><strong>Data Detectives Project:</strong> An innovative curriculum component that engages students in real-world data storytelling, developing both technical skills and critical thinking abilities.</p>
-            <p><strong>AI Integration:</strong> Seamlessly incorporating artificial intelligence tools and concepts into Management Information Systems coursework to prepare students for the future of work.</p>
-            <p><strong>Equity-Centered Approach:</strong> Designing inclusive learning experiences that acknowledge diverse backgrounds and learning styles while promoting equal access to educational opportunities.</p>
-        </div>
+        <div class="main-content">
+            <div id="ay2022-2023" class="year-section">
+                <h2 class="year-title">AY 2022-2023</h2>
+                
+                <div class="subsection">
+                    <h3>Teaching Overview</h3>
+                    <p>First year as Assistant Professor focusing on establishing equity-centered pedagogy foundations and integrating innovative teaching methodologies in MIS curriculum.</p>
+                </div>
 
-        <div class="section">
-            <h2>Impact</h2>
-            <p>Through these innovative teaching methods, students develop not only technical competencies but also the critical thinking skills necessary to navigate complex data-driven decision making in their future careers.</p>
-        </div>
+                <div class="subsection">
+                    <h3>Courses Taught and Modality</h3>
+                    <div class="course-list">
+                        <div class="course-item">
+                            <strong>MIS 101 - Introduction to Management Information Systems</strong><br>
+                            Modality: Hybrid (In-person + Online components)
+                        </div>
+                        <div class="course-item">
+                            <strong>MIS 301 - Systems Analysis and Design</strong><br>
+                            Modality: In-person with virtual lab sessions
+                        </div>
+                    </div>
+                </div>
 
-        <div class="tags">
-            <span class="tag">Curriculum Design</span>
-            <span class="tag">Equity-Centered</span>
-            <span class="tag">AI Integration</span>
-            <span class="tag">Data Storytelling</span>
-            <span class="tag">Critical Thinking</span>
+                <div class="subsection">
+                    <h3>Teaching Objective and Strategy</h3>
+                    <p>Implemented equity-centered approach to ensure all students have equal access to learning opportunities. Introduced the "Data Detectives" project to foster critical thinking through real-world data analysis scenarios.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Evaluations</h3>
+                    <p>Student evaluation scores: 4.2/5.0. Positive feedback on innovative teaching methods and inclusive classroom environment. Areas for improvement identified in technology integration.</p>
+                </div>
+            </div>
+
+            <div id="ay2023-2024" class="year-section">
+                <h2 class="year-title">AY 2023-2024</h2>
+                
+                <div class="subsection">
+                    <h3>Teaching Overview</h3>
+                    <p>Enhanced curriculum with advanced AI integration and expanded the Data Detectives project. Focused on developing students' analytical storytelling capabilities.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Courses Taught and Modality</h3>
+                    <div class="course-list">
+                        <div class="course-item">
+                            <strong>MIS 101 - Introduction to Management Information Systems</strong><br>
+                            Modality: Fully in-person with digital portfolio components
+                        </div>
+                        <div class="course-item">
+                            <strong>MIS 401 - Advanced Database Management</strong><br>
+                            Modality: Hybrid with hands-on lab sessions
+                        </div>
+                        <div class="course-item">
+                            <strong>MIS 450 - Business Intelligence and Analytics</strong><br>
+                            Modality: In-person with industry partnership projects
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Teaching Objective and Strategy</h3>
+                    <p>Integrated Tableau certification preparation into curriculum. Developed industry partnerships for real-world project experiences. Enhanced accessibility through multiple learning modalities.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Evaluations</h3>
+                    <p>Student evaluation scores: 4.5/5.0. Significant improvement in technology integration feedback. Students praised hands-on learning approach and industry connections.</p>
+                </div>
+            </div>
+
+            <div id="ay2024-2025" class="year-section">
+                <h2 class="year-title">AY 2024-2025</h2>
+                
+                <div class="subsection">
+                    <h3>Teaching Overview</h3>
+                    <p>Current academic year focusing on AI workflow integration and advanced data storytelling techniques. Implementing CSPO methodologies in project management coursework.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Courses Taught and Modality</h3>
+                    <div class="course-list">
+                        <div class="course-item">
+                            <strong>MIS 201 - Business Process Management</strong><br>
+                            Modality: Hybrid with AI tool integration
+                        </div>
+                        <div class="course-item">
+                            <strong>MIS 350 - Project Management in IT</strong><br>
+                            Modality: In-person with Agile/Scrum methodology focus
+                        </div>
+                        <div class="course-item">
+                            <strong>MIS 480 - Capstone: Digital Transformation</strong><br>
+                            Modality: Project-based learning with industry mentors
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Teaching Objective and Strategy</h3>
+                    <p>Leveraging Google AI in Education certification to integrate ethical AI practices. Applying CSPO principles to enhance student project management skills. Focus on preparing students for digital transformation roles.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Evaluations</h3>
+                    <p>Mid-semester feedback shows strong student engagement with AI integration. Preliminary scores trending toward 4.6/5.0. Students appreciate practical application of Agile methodologies.</p>
+                </div>
+            </div>
+
+            <div id="ay2025-2026" class="year-section">
+                <h2 class="year-title">AY 2025-2026</h2>
+                
+                <div class="subsection">
+                    <h3>Teaching Overview</h3>
+                    <p>Planned expansion of curriculum to include advanced AI ethics and sustainable technology practices. Development of new interdisciplinary courses bridging MIS and social impact.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Courses Taught and Modality</h3>
+                    <div class="course-list">
+                        <div class="course-item">
+                            <strong>Planned Course Development</strong><br>
+                            Focus on emerging technologies and ethical AI implementation
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Teaching Objective and Strategy</h3>
+                    <p>Planning to integrate sustainability metrics into technology decision-making curriculum. Developing partnerships with social impact organizations for experiential learning opportunities.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Evaluations</h3>
+                    <p>Evaluation framework under development with focus on measuring social impact awareness and ethical technology decision-making capabilities.</p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        // Smooth scrolling and active navigation
+        document.querySelectorAll('.year-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active state
+                document.querySelectorAll('.year-nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Update active navigation on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.year-section');
+            const navLinks = document.querySelectorAll('.year-nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
