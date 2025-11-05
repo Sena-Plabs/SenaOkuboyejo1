@@ -72,60 +72,120 @@
         }
 
         .content {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
         }
 
-        .section {
-            margin-bottom: 3rem;
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
         }
 
-        .section h2 {
+        .year-nav {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .year-nav h3 {
             color: #2563eb;
             margin-bottom: 1rem;
-            font-size: 1.8rem;
+            font-size: 1.1rem;
         }
 
-        .section p {
+        .year-nav ul {
+            list-style: none;
+        }
+
+        .year-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .year-nav a {
+            color: #666;
+            text-decoration: none;
+            padding: 0.5rem;
+            display: block;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .year-nav a:hover,
+        .year-nav a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .main-content {
+            min-height: 100vh;
+        }
+
+        .overview {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .overview h2 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .year-section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .year-title {
+            color: #2563eb;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e0e7ff;
+            padding-bottom: 1rem;
+        }
+
+        .subsection {
+            margin-bottom: 2rem;
+        }
+
+        .subsection h3 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .subsection p {
             margin-bottom: 1rem;
             color: #666;
         }
 
-        .cert-list {
-            list-style: none;
-            padding: 0;
-        }
-
         .cert-item {
             background: #f8fafc;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
+            padding: 1rem;
+            margin: 0.5rem 0;
             border-radius: 8px;
-            border-left: 4px solid #2563eb;
-        }
-
-        .cert-item h3 {
-            color: #2563eb;
-            margin-bottom: 0.5rem;
-        }
-
-        .tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .tag {
-            padding: 0.5rem 1rem;
-            background: #e0e7ff;
-            color: #2563eb;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            border-left: 3px solid #2563eb;
         }
 
         @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
@@ -155,37 +215,146 @@
     </section>
 
     <div class="content">
-        <div class="section">
-            <h2>Professional Certifications</h2>
-            <ul class="cert-list">
-                <li class="cert-item">
-                    <h3>Certified Scrum Product Owner (CSPO)</h3>
-                    <p>Advanced training in agile methodologies and product management strategies, enabling effective leadership of cross-functional teams and strategic product development.</p>
-                </li>
-                <li class="cert-item">
-                    <h3>Google AI in Education Certification</h3>
-                    <p>Specialized training in AI applications for educational technology and workflow automation, focusing on ethical implementation and pedagogical effectiveness.</p>
-                </li>
-                <li class="cert-item">
-                    <h3>Tableau Explorer Certification</h3>
-                    <p>Advanced data visualization and business intelligence platform expertise, enabling sophisticated analytics and compelling data storytelling.</p>
-                </li>
-            </ul>
+        <div class="sidebar">
+            <div class="year-nav">
+                <h3>Academic Years</h3>
+                <ul>
+                    <li><a href="#overview" class="active">Overview</a></li>
+                    <li><a href="#ay2022-2023">AY 2022-2023</a></li>
+                    <li><a href="#ay2023-2024">AY 2023-2024</a></li>
+                    <li><a href="#ay2024-2025">AY 2024-2025</a></li>
+                    <li><a href="#ay2025-2026">AY 2025-2026</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>Ongoing Development</h2>
-            <p>Continuous engagement with emerging technologies and methodologies ensures that my teaching, research, and service remain current and impactful.</p>
-            <p>Regular participation in professional development workshops, conferences, and training programs keeps me at the forefront of educational innovation and technology integration.</p>
-        </div>
+        <div class="main-content">
+            <div id="overview" class="overview">
+                <h2>Professional Development Overview</h2>
+                <p>Commitment to lifelong learning through strategic professional development, certifications, and continuous skill enhancement to remain current with emerging technologies and pedagogical best practices.</p>
+            </div>
 
-        <div class="tags">
-            <span class="tag">CSPO</span>
-            <span class="tag">AI Certification</span>
-            <span class="tag">Tableau</span>
-            <span class="tag">Professional Development</span>
-            <span class="tag">Lifelong Learning</span>
+            <div id="ay2022-2023" class="year-section">
+                <h2 class="year-title">AY 2022-2023</h2>
+                
+                <div class="subsection">
+                    <h3>Certifications Earned</h3>
+                    <div class="cert-item">
+                        <strong>Tableau Explorer Certification</strong><br>
+                        Advanced data visualization and business intelligence platform expertise
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Professional Development Activities</h3>
+                    <p>Attended EDUCAUSE Annual Conference. Completed online courses in equity-centered pedagogy and inclusive teaching practices.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Skills Development</h3>
+                    <p>Enhanced data visualization capabilities, developed expertise in business intelligence tools, and strengthened foundation in inclusive education practices.</p>
+                </div>
+            </div>
+
+            <div id="ay2023-2024" class="year-section">
+                <h2 class="year-title">AY 2023-2024</h2>
+                
+                <div class="subsection">
+                    <h3>Certifications Earned</h3>
+                    <div class="cert-item">
+                        <strong>Certified Scrum Product Owner (CSPO)</strong><br>
+                        Advanced training in agile methodologies and product management strategies
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Professional Development Activities</h3>
+                    <p>Participated in Decision Sciences Institute Annual Meeting. Completed workshops on industry-academia partnerships and experiential learning design.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Skills Development</h3>
+                    <p>Mastered Agile and Scrum methodologies, enhanced project management capabilities, and developed expertise in cross-functional team leadership.</p>
+                </div>
+            </div>
+
+            <div id="ay2024-2025" class="year-section">
+                <h2 class="year-title">AY 2024-2025</h2>
+                
+                <div class="subsection">
+                    <h3>Certifications Earned</h3>
+                    <div class="cert-item">
+                        <strong>Google AI in Education Certification</strong><br>
+                        Specialized training in AI applications for educational technology and workflow automation
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Professional Development Activities</h3>
+                    <p>Currently enrolled in advanced AI ethics course. Attending workshops on sustainable technology practices and digital transformation leadership.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Skills Development</h3>
+                    <p>Developing expertise in ethical AI implementation, workflow automation, and educational technology integration with focus on pedagogical effectiveness.</p>
+                </div>
+            </div>
+
+            <div id="ay2025-2026" class="year-section">
+                <h2 class="year-title">AY 2025-2026</h2>
+                
+                <div class="subsection">
+                    <h3>Planned Certifications</h3>
+                    <div class="cert-item">
+                        <strong>Sustainability in Technology Leadership Certificate</strong><br>
+                        Planned certification in sustainable technology practices and environmental impact assessment
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Professional Development Goals</h3>
+                    <p>Planning to attend international conferences on social impact technology. Pursuing advanced training in interdisciplinary curriculum development.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Skills Development Focus</h3>
+                    <p>Expanding expertise in sustainability metrics, social impact measurement, and interdisciplinary collaboration methodologies.</p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.year-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                document.querySelectorAll('.year-nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.year-section, .overview');
+            const navLinks = document.querySelectorAll('.year-nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

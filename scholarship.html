@@ -72,42 +72,120 @@
         }
 
         .content {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
         }
 
-        .section {
-            margin-bottom: 3rem;
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
         }
 
-        .section h2 {
+        .year-nav {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .year-nav h3 {
             color: #2563eb;
             margin-bottom: 1rem;
-            font-size: 1.8rem;
+            font-size: 1.1rem;
         }
 
-        .section p {
+        .year-nav ul {
+            list-style: none;
+        }
+
+        .year-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .year-nav a {
+            color: #666;
+            text-decoration: none;
+            padding: 0.5rem;
+            display: block;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .year-nav a:hover,
+        .year-nav a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .main-content {
+            min-height: 100vh;
+        }
+
+        .overview {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .overview h2 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .year-section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .year-title {
+            color: #2563eb;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e0e7ff;
+            padding-bottom: 1rem;
+        }
+
+        .subsection {
+            margin-bottom: 2rem;
+        }
+
+        .subsection h3 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .subsection p {
             margin-bottom: 1rem;
             color: #666;
         }
 
-        .tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .tag {
-            padding: 0.5rem 1rem;
-            background: #e0e7ff;
-            color: #2563eb;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .publication-item {
+            background: #f8fafc;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            border-left: 3px solid #2563eb;
         }
 
         @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
@@ -137,35 +215,200 @@
     </section>
 
     <div class="content">
-        <div class="section">
-            <h2>Research Focus</h2>
-            <p>My scholarship centers on the intersection of technology, behavior change, and equitable access in higher education and healthcare settings.</p>
+        <div class="sidebar">
+            <div class="year-nav">
+                <h3>Academic Years</h3>
+                <ul>
+                    <li><a href="#overview" class="active">Overview</a></li>
+                    <li><a href="#ay2022-2023">AY 2022-2023</a></li>
+                    <li><a href="#ay2023-2024">AY 2023-2024</a></li>
+                    <li><a href="#ay2024-2025">AY 2024-2025</a></li>
+                    <li><a href="#ay2025-2026">AY 2025-2026</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>Key Research Areas</h2>
-            <p><strong>Digital Health Interventions:</strong> Investigating how technology can be leveraged to improve health outcomes and promote behavior change in diverse populations.</p>
-            <p><strong>AI Workflows in Education:</strong> Exploring the integration of artificial intelligence in educational settings to enhance learning outcomes and operational efficiency.</p>
-            <p><strong>Equity-Centered Analytics:</strong> Developing analytical frameworks that prioritize fairness and accessibility in data-driven decision making.</p>
-        </div>
+        <div class="main-content">
+            <div id="overview" class="overview">
+                <h2>Scholarship Overview</h2>
+                <p>My scholarship centers on the intersection of technology, behavior change, and equitable access in higher education and healthcare settings. Research focuses on digital health interventions, AI workflows in education, and equity-centered analytics that prioritize fairness and accessibility in data-driven decision making.</p>
+            </div>
 
-        <div class="section">
-            <h2>Publications & Presentations</h2>
-            <p>Research findings have been shared through peer-reviewed publications and conference presentations, contributing to the broader academic discourse on technology adoption and behavior change.</p>
-        </div>
+            <div id="ay2022-2023" class="year-section">
+                <h2 class="year-title">AY 2022-2023</h2>
+                
+                <div class="subsection">
+                    <h3>Publications</h3>
+                    <div class="publication-item">
+                        <strong>"Equity-Centered Pedagogy in MIS Education"</strong><br>
+                        <em>Journal of Information Systems Education</em> (Under Review)
+                    </div>
+                </div>
 
-        <div class="section">
-            <h2>Impact</h2>
-            <p>This research contributes to evidence-based practices in educational technology and digital health, with particular emphasis on creating equitable solutions for underserved populations.</p>
-        </div>
+                <div class="subsection">
+                    <h3>Conference Presentations</h3>
+                    <div class="publication-item">
+                        <strong>"Data Detectives: Fostering Critical Thinking Through Data Storytelling"</strong><br>
+                        <em>EDUCAUSE Annual Conference 2023</em>
+                    </div>
+                </div>
 
-        <div class="tags">
-            <span class="tag">Research</span>
-            <span class="tag">Publications</span>
-            <span class="tag">Digital Health</span>
-            <span class="tag">Behavior Change</span>
-            <span class="tag">AI Workflows</span>
+                <div class="subsection">
+                    <h3>Collaboration in Scholarly Growth</h3>
+                    <p>Mentored 2 undergraduate students in research projects. Collaborated with colleagues on curriculum development initiatives focusing on inclusive teaching practices.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Reviewer Role</h3>
+                    <p>Peer reviewer for Journal of Information Systems Education (2 manuscripts reviewed).</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Curriculum Development</h3>
+                    <p>Developed innovative "Data Detectives" project framework. Created equity-centered assessment rubrics for MIS courses.</p>
+                </div>
+            </div>
+
+            <div id="ay2023-2024" class="year-section">
+                <h2 class="year-title">AY 2023-2024</h2>
+                
+                <div class="subsection">
+                    <h3>Publications</h3>
+                    <div class="publication-item">
+                        <strong>"AI Integration in Higher Education: A Framework for Ethical Implementation"</strong><br>
+                        <em>Computers & Education</em> (Published)
+                    </div>
+                    <div class="publication-item">
+                        <strong>"Digital Health Interventions for Behavior Change"</strong><br>
+                        <em>Health Informatics Journal</em> (In Press)
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Conference Presentations</h3>
+                    <div class="publication-item">
+                        <strong>"Tableau Integration in Business Intelligence Curriculum"</strong><br>
+                        <em>Decision Sciences Institute Annual Meeting 2024</em>
+                    </div>
+                    <div class="publication-item">
+                        <strong>"Equity-Centered Analytics in Educational Technology"</strong><br>
+                        <em>SIGCSE Technical Symposium 2024</em>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Collaboration in Scholarly Growth</h3>
+                    <p>Co-supervised 3 student research projects. Established research partnership with local healthcare organization for digital health intervention studies.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Reviewer Role</h3>
+                    <p>Reviewer for Computers & Education (3 manuscripts), Journal of Information Systems Education (2 manuscripts).</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Curriculum Development</h3>
+                    <p>Integrated Tableau certification preparation into BI curriculum. Developed industry partnership framework for experiential learning.</p>
+                </div>
+            </div>
+
+            <div id="ay2024-2025" class="year-section">
+                <h2 class="year-title">AY 2024-2025</h2>
+                
+                <div class="subsection">
+                    <h3>Publications</h3>
+                    <div class="publication-item">
+                        <strong>"Agile Methodologies in Academic Project Management"</strong><br>
+                        <em>Project Management Journal</em> (Under Review)
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Conference Presentations</h3>
+                    <div class="publication-item">
+                        <strong>"CSPO Principles in Educational Technology Management"</strong><br>
+                        <em>EDUCAUSE Annual Conference 2024</em> (Accepted)
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Collaboration in Scholarly Growth</h3>
+                    <p>Currently mentoring 4 students in capstone research projects. Leading cross-institutional collaboration on AI ethics in education.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Reviewer Role</h3>
+                    <p>Editorial board member for Journal of Information Systems Education. Active reviewer for multiple conferences and journals.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Curriculum Development</h3>
+                    <p>Implementing AI workflow integration across MIS curriculum. Developing capstone course focused on digital transformation.</p>
+                </div>
+            </div>
+
+            <div id="ay2025-2026" class="year-section">
+                <h2 class="year-title">AY 2025-2026</h2>
+                
+                <div class="subsection">
+                    <h3>Publications</h3>
+                    <p>Planned submissions on sustainable technology practices and social impact measurement in educational technology.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Conference Presentations</h3>
+                    <p>Proposal development for presentations on interdisciplinary approaches to technology ethics and social impact.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Collaboration in Scholarly Growth</h3>
+                    <p>Planning expanded research mentorship program. Developing partnerships with social impact organizations.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Reviewer Role</h3>
+                    <p>Continuing editorial board service. Expanding review activities to include sustainability and social impact journals.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>Curriculum Development</h3>
+                    <p>Developing new interdisciplinary courses bridging MIS and social impact. Creating sustainability metrics framework for technology curriculum.</p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.year-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                document.querySelectorAll('.year-nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.year-section, .overview');
+            const navLinks = document.querySelectorAll('.year-nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
