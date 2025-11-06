@@ -93,12 +93,14 @@
         }
 
         .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 5rem;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            text-align: center;
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .status-badge {
@@ -663,75 +665,70 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <div class="status-badge">
-                        <span class="status-dot"></span>
-                        Currently booking Spring workshops & collaborations
-                    </div>
-                    
-                    <h1>
-                        Strategic technology integration that creates human-centered workflows for meaningful impact
-                    </h1>
-                    
-                    <p class="hero-description">
-                        I specialize in seamlessly integrating advanced technologies into educational and organizational environments, designing workflows that prioritize human needs while maximizing efficiency. Through strategic implementation of <strong>AI tools</strong>, <strong>data analytics</strong>, and <strong>agile methodologies</strong>, I create solutions that enhance human capabilities rather than replace them.
-                    </p>
-                    
-                    <div class="cta-buttons">
-                        <a href="#portfolio" class="btn btn-primary">
-                            Explore my work
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                        <a href="/Sena-Okuboyejo-CV.pdf" class="btn btn-secondary">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-                            </svg>
-                            Download CV
-                        </a>
-                        <a href="mailto:your.email@university.edu" class="btn btn-secondary">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            Book a workshop
-                        </a>
-                    </div>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-card">
-                            <span class="stat-number">17+</span>
-                            <span class="stat-label">Years teaching</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">CSPO</span>
-                            <span class="stat-label">Certified</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">AI</span>
-                            <span class="stat-label">Certified Expert</span>
-                        </div>
-                    </div>
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    Currently booking Spring workshops & collaborations
                 </div>
                 
-                <div class="hero-visual">
-                    <div class="profile-container">
-                        <img src="Sena_Portrait1.PNG" alt="Dr. Sena Okuboyejo" class="profile-img">
+                <h1>
+                    Dr. Sena Okuboyejo
+                </h1>
+                
+                <h2 style="font-size: 1.8rem; font-weight: 400; margin: 1rem 0 2rem 0; opacity: 0.95;">
+                    Strategic technology integration that creates human-centered workflows for meaningful impact
+                </h2>
+                
+                <p class="hero-description">
+                    Seamlessly integrating advanced technologies into educational environments, designing workflows that enhance human capabilities through <strong>AI tools</strong>, <strong>data analytics</strong>, and <strong>agile methodologies</strong>.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="#portfolio" class="btn btn-primary">
+                        Explore my work
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="/Sena-Okuboyejo-CV.pdf" class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                        </svg>
+                        Download CV
+                    </a>
+                </div>
+                
+                <div class="hero-visual" style="margin-top: 4rem;">
+                    <div class="profile-container" style="max-width: 400px; margin: 0 auto;">
+                        <img src="Sena_Portrait1.PNG" alt="Dr. Sena Okuboyejo" class="profile-img" style="aspect-ratio: 1; margin-bottom: 1.5rem;">
                         <div class="role-cards">
                             <div class="role-card">
-                                🎓 Assistant Professor · MIS
+                                🎓 Assistant Professor
                             </div>
                             <div class="role-card">
-                                📋 Product Owner (Certified)
+                                📋 Product Owner (CSPO)
                             </div>
                             <div class="role-card">
-                                📊 Data Storyteller · Designer
+                                📊 Data Storyteller
                             </div>
                             <div class="role-card">
                                 🔬 Researcher
                             </div>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="hero-stats" style="margin-top: 3rem;">
+                    <div class="stat-card">
+                        <span class="stat-number">17+</span>
+                        <span class="stat-label">Years teaching</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">CSPO</span>
+                        <span class="stat-label">Certified</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">AI</span>
+                        <span class="stat-label">Certified Expert</span>
                     </div>
                 </div>
             </div>
