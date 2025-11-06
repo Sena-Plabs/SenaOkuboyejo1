@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sena Okuboyejo - Portfolio</title>
+    <title>Dr. Sena Okuboyejo - AI & Educational Innovation Leader</title>
     <style>
         * {
             margin: 0;
@@ -12,10 +12,15 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         /* Header */
@@ -27,21 +32,21 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
-            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 2rem;
         }
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: bold;
             color: #2563eb;
         }
 
@@ -65,59 +70,77 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
-            padding: 0 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
         }
 
         .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 400px;
             gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-text h1 {
             font-size: 3.5rem;
-            font-weight: 300;
+            font-weight: 700;
             margin-bottom: 1rem;
             line-height: 1.2;
         }
 
-        .hero-text .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
+            font-weight: 300;
         }
 
-        .hero-text p {
+        .hero-description {
             font-size: 1.1rem;
             margin-bottom: 2rem;
-            opacity: 0.8;
+            opacity: 0.9;
+            line-height: 1.7;
         }
 
         .cta-buttons {
             display: flex;
             gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .btn {
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s;
-            cursor: pointer;
+            display: inline-block;
         }
 
         .btn-primary {
             background: white;
             color: #2563eb;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .btn-secondary {
@@ -126,121 +149,198 @@
             border: 2px solid white;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        .btn-secondary:hover {
+            background: white;
+            color: #2563eb;
         }
 
-        .hero-image {
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
             text-align: center;
         }
 
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
         .profile-img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid rgba(255,255,255,0.3);
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: #f8fafc;
         }
 
         .section-title {
             font-size: 2.5rem;
-            font-weight: 300;
             text-align: center;
             margin-bottom: 3rem;
-            color: #2563eb;
+            color: #1e293b;
         }
 
-        /* About Section */
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 300px 1fr;
             gap: 4rem;
-            align-items: center;
-            margin-bottom: 3rem;
+            align-items: start;
+            margin-bottom: 4rem;
         }
 
-        .about-image {
-            text-align: center;
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         .about-text h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
             color: #2563eb;
+            margin-bottom: 1.5rem;
         }
 
         .about-text p {
             margin-bottom: 1.5rem;
-            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
-        .skills {
+        .highlight-quote {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .highlight-quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .skill-item {
-            padding: 1rem;
-            background: #f8fafc;
-            border-radius: 8px;
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
             border-left: 4px solid #2563eb;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h4 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         /* Experience Section */
         .experience {
-            background: #f8fafc;
+            padding: 6rem 0;
+            background: white;
         }
 
         .timeline {
+            max-width: 800px;
+            margin: 0 auto;
             position: relative;
-            padding-left: 2rem;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 0;
+            left: 50%;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: #2563eb;
+            background: #e2e8f0;
+            transform: translateX(-50%);
         }
 
         .timeline-item {
             position: relative;
             margin-bottom: 3rem;
-            padding-left: 2rem;
+            width: 50%;
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -1.5rem;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
-            background: #2563eb;
-            border-radius: 50%;
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 2rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 2rem;
         }
 
         .timeline-content {
             background: white;
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #2563eb;
+            border-radius: 50%;
+            top: 2rem;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
         }
 
         .timeline-content h3 {
@@ -248,40 +348,48 @@
             margin-bottom: 0.5rem;
         }
 
-        .timeline-content .date {
-            color: #666;
+        .timeline-date {
+            color: #64748b;
             font-size: 0.9rem;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 0;
+            background: #f8fafc;
+        }
+
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .portfolio-item {
+        .portfolio-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-5px);
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
 
-        .portfolio-img {
-            width: 100%;
+        .portfolio-header {
             height: 200px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 3rem;
+            position: relative;
         }
 
         .portfolio-content {
@@ -291,29 +399,30 @@
         .portfolio-content h3 {
             color: #2563eb;
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
         .portfolio-content p {
-            color: #666;
-            margin-bottom: 1rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
-        .portfolio-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 0.25rem 0.75rem;
-            background: #e0e7ff;
+        .portfolio-link {
+            display: inline-block;
             color: #2563eb;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .portfolio-link:hover {
+            color: #1d4ed8;
         }
 
         /* Contact Section */
         .contact {
+            padding: 6rem 0;
             background: #1e293b;
             color: white;
         }
@@ -333,10 +442,15 @@
             text-align: center;
             padding: 2rem;
             background: rgba(255,255,255,0.1);
-            border-radius: 12px;
+            border-radius: 15px;
+            transition: background 0.3s;
         }
 
-        .contact-item .icon {
+        .contact-item:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .contact-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
@@ -359,6 +473,7 @@
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2rem;
             }
 
             .hero-text h1 {
@@ -367,14 +482,31 @@
 
             .about-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .skills {
-                grid-template-columns: 1fr;
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 3rem !important;
+                padding-right: 0 !important;
+            }
+
+            .timeline-item::before {
+                left: 10px !important;
             }
 
             .cta-buttons {
                 flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
             }
         }
     </style>
@@ -396,29 +528,45 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Bridging Data, Design & Strategy</h1>
-                <p class="subtitle">Assistant Professor • Product Owner • Analytics Storyteller</p>
-                <p>I create meaningful impact through technology, behavior change, and equitable access in higher education and beyond.</p>
-                <div class="cta-buttons">
-                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transforming Education Through AI & Innovation</h1>
+                    <p class="subtitle">Educational Innovator • Research Pioneer • Technology Integrator • Strategic Leader</p>
+                    <p class="hero-description">Leading breakthrough research in AI-driven education, digital health interventions, and strategic technology integration that creates measurable impact across diverse learning environments.</p>
+                    <div class="cta-buttons">
+                        <a href="#portfolio" class="btn btn-primary">Explore My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Teaching</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">AI</span>
+                            <span class="stat-label">Certified Expert</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">CSPO</span>
+                            <span class="stat-label">Certified</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="Sena_Portrait1.PNG" alt="Dr. Sena Okuboyejo" class="profile-img">
+                <div class="hero-image">
+                    <img src="Sena_Portrait1.PNG" alt="Dr. Sena Okuboyejo" class="profile-img">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="Sena Portrait_MSU.png" alt="Dr. Sena Okuboyejo" style="width: 100%; max-width: 300px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    <img src="Sena Portrait_MSU.png" alt="Dr. Sena Okuboyejo">
                 </div>
                 <div class="about-text">
                     <h3>Pioneering the Future of AI-Driven Education</h3>
@@ -426,30 +574,36 @@
                     
                     <p>🚀 <strong>Research Excellence:</strong> Leading breakthrough research in digital health interventions, AI workflows in education, and advanced analytics that drive measurable outcomes across diverse learning environments.</p>
                     
-                    <p>🎯 <strong>Teaching Innovation:</strong> Developing critical thinking through investigative data analysis and collaborative team-based projects, empowering students to uncover insights, craft compelling narratives, and master analytical problem-solving skills. Students build confidence through in-class presentations and showcase their work at student conferences, bridging technical expertise with professional communication skills.</p>
+                    <p>🎯 <strong>Teaching Innovation:</strong> Developing critical thinking through investigative data analysis and collaborative team-based projects, empowering students to uncover insights, craft compelling narratives, and master analytical problem-solving skills.</p>
                     
                     <p>💡 <strong>Technical Leadership:</strong> Google AI certified, Tableau expert, and CSPO-trained professional who transforms complex technological concepts into accessible, impactful educational solutions.</p>
-                    
-                    <p><em>"I bridge the gap between emerging technology and practical application, preparing students to lead in an AI-driven world."</em></p>
                 </div>
             </div>
             
-            <div class="skills">
-                <div class="skill-item">
-                    <strong>🔬 Research & Innovation</strong>
-                    <p>Digital health interventions • AI workflows • Advanced analytics</p>
+            <div class="highlight-quote">
+                I bridge the gap between emerging technology and practical application, preparing students to lead in an AI-driven world.
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🔬</div>
+                    <h4>Research & Innovation</h4>
+                    <p>Digital health interventions, AI workflows, advanced analytics, and breakthrough research methodologies</p>
                 </div>
-                <div class="skill-item">
-                    <strong>🎓 Educational Technology</strong>
-                    <p>Data Detectives project • AI integration • Curriculum design</p>
+                <div class="skill-card">
+                    <div class="skill-icon">🎓</div>
+                    <h4>Educational Technology</h4>
+                    <p>Data Detectives project, AI integration, curriculum design, and innovative teaching strategies</p>
                 </div>
-                <div class="skill-item">
-                    <strong>📊 Data Science & Visualization</strong>
-                    <p>Tableau certified • Business intelligence • Data storytelling</p>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h4>Data Science & Visualization</h4>
+                    <p>Tableau certified, business intelligence, data storytelling, and analytical problem-solving</p>
                 </div>
-                <div class="skill-item">
-                    <strong>⚡ Strategic Leadership</strong>
-                    <p>CSPO certified • Google AI certified • Product management</p>
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h4>Strategic Leadership</h4>
+                    <p>CSPO certified, Google AI certified, product management, and agile methodologies</p>
                 </div>
             </div>
         </div>
@@ -458,34 +612,41 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Experience & Education</h2>
+            <h2 class="section-title">Experience & Achievements</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Assistant Professor</h3>
-                        <div class="date">2022 - Present</div>
-                        <p>Teaching MIS courses with emphasis on equity-centered pedagogy, data storytelling, and AI integration. Developed innovative curriculum including "Data Detectives" project.</p>
+                        <div class="timeline-date">2022 - Present</div>
+                        <p>Teaching MIS courses with emphasis on equity-centered pedagogy, data storytelling, and AI integration. Developed innovative "Data Detectives" curriculum fostering critical thinking and investigative analysis.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Certified Scrum Product Owner (CSPO)</h3>
-                        <div class="date">2024</div>
-                        <p>Advanced training in agile methodologies and product management strategies.</p>
+                        <div class="timeline-date">2024</div>
+                        <p>Advanced certification in agile methodologies, product management strategies, and cross-functional team leadership.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Google AI in Education Certification</h3>
-                        <div class="date">2024</div>
-                        <p>Specialized training in AI applications for educational technology and workflow automation.</p>
+                        <div class="timeline-date">2024</div>
+                        <p>Specialized training in AI applications for educational technology, workflow automation, and innovative learning solutions.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Tableau Explorer Certification</h3>
-                        <div class="date">2023</div>
-                        <p>Advanced data visualization and business intelligence platform expertise.</p>
+                        <h3>Tableau Desktop Specialist</h3>
+                        <div class="timeline-date">2023</div>
+                        <p>Professional certification in data visualization, business intelligence, and advanced analytics storytelling.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Ph.D. in Information Systems</h3>
+                        <div class="timeline-date">2022</div>
+                        <p>Doctoral research focused on technology adoption, digital health interventions, and behavioral change methodologies.</p>
                     </div>
                 </div>
             </div>
@@ -493,70 +654,60 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio">
+    <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-title">Academic Excellence</h2>
+            <h2 class="section-title">Academic Portfolio</h2>
             <div class="portfolio-grid">
-                <a href="teaching.html" class="portfolio-item" style="text-decoration: none; color: inherit;">
-                    <div class="portfolio-img">🎓</div>
-                    <div class="portfolio-content">
-                        <h3>Teaching</h3>
-                        <p>Innovative curriculum development with equity-centered pedagogy, AI integration in MIS courses, and the acclaimed "Data Detectives" project fostering critical thinking through data storytelling.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Curriculum Design</span>
-                            <span class="tag">Equity-Centered</span>
-                            <span class="tag">AI Integration</span>
-                        </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-header">
+                        🎓
                     </div>
-                </a>
-                <a href="scholarship.html" class="portfolio-item" style="text-decoration: none; color: inherit;">
-                    <div class="portfolio-img">📚</div>
                     <div class="portfolio-content">
-                        <h3>Scholarship</h3>
-                        <p>Research publications and conference presentations on digital health interventions, AI workflows in education, and equity-centered analytics with focus on behavior change and technology adoption.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Research</span>
-                            <span class="tag">Publications</span>
-                            <span class="tag">Digital Health</span>
-                        </div>
+                        <h3>Teaching Excellence</h3>
+                        <p>Innovative curriculum design, Data Detectives project, equity-centered pedagogy, and student-centered learning approaches across multiple academic years.</p>
+                        <a href="teaching.html" class="portfolio-link">Explore Teaching →</a>
                     </div>
-                </a>
-                <a href="continuing-preparation.html" class="portfolio-item" style="text-decoration: none; color: inherit;">
-                    <div class="portfolio-img">📈</div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-header">
+                        📚
+                    </div>
                     <div class="portfolio-content">
-                        <h3>Evidence of Continuing Preparation</h3>
-                        <p>Certified Scrum Product Owner (CSPO), Google AI in Education Certification, Tableau Explorer Certification, and ongoing professional development in emerging technologies.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">CSPO</span>
-                            <span class="tag">AI Certification</span>
-                            <span class="tag">Tableau</span>
-                        </div>
+                        <h3>Scholarship & Research</h3>
+                        <p>Publications, conference presentations, collaborative research, peer review activities, and curriculum development initiatives.</p>
+                        <a href="scholarship.html" class="portfolio-link">View Scholarship →</a>
                     </div>
-                </a>
-                <a href="service-student.html" class="portfolio-item" style="text-decoration: none; color: inherit;">
-                    <div class="portfolio-img">👥</div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-header">
+                        🚀
+                    </div>
                     <div class="portfolio-content">
-                        <h3>Service to Student</h3>
-                        <p>Mentoring students in research projects, providing accessible office hours, developing inclusive learning environments, and supporting student success through personalized guidance and career development.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Mentoring</span>
-                            <span class="tag">Accessibility</span>
-                            <span class="tag">Student Success</span>
-                        </div>
+                        <h3>Continuing Preparation</h3>
+                        <p>Professional certifications, memberships, capacity building activities, and training in DEI, technology integration, and research methods.</p>
+                        <a href="continuing-preparation.html" class="portfolio-link">See Growth →</a>
                     </div>
-                </a>
-                <a href="service-university.html" class="portfolio-item" style="text-decoration: none; color: inherit;">
-                    <div class="portfolio-img">🏛️</div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-header">
+                        👥
+                    </div>
                     <div class="portfolio-content">
-                        <h3>Service to the University</h3>
-                        <p>ERP faculty search co-chair, DEI committee participation, curriculum development leadership, and institutional initiatives for AI integration and educational innovation.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Committee Leadership</span>
-                            <span class="tag">DEI Initiatives</span>
-                            <span class="tag">Institutional Service</span>
-                        </div>
+                        <h3>Service to Students</h3>
+                        <p>Student mentoring, accessibility initiatives, office hours, and comprehensive support programs for student growth and development.</p>
+                        <a href="service-student.html" class="portfolio-link">Student Impact →</a>
                     </div>
-                </a>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-header">
+                        🏛️
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Service to University</h3>
+                        <p>Department and college service, university-wide initiatives, and institutional contributions to academic excellence and community building.</p>
+                        <a href="service-university.html" class="portfolio-link">University Service →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -565,27 +716,27 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Ready to collaborate on innovative projects that bridge technology and human-centered design?</p>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">Ready to collaborate on innovative educational technology solutions?</p>
             <div class="contact-grid">
                 <div class="contact-item">
-                    <div class="icon">📧</div>
+                    <div class="contact-icon">📧</div>
                     <h3>Email</h3>
-                    <a href="mailto:sena.okuboyejo@university.edu">sena.okuboyejo@university.edu</a>
+                    <a href="mailto:your.email@university.edu">your.email@university.edu</a>
                 </div>
                 <div class="contact-item">
-                    <div class="icon">💼</div>
+                    <div class="contact-icon">💼</div>
                     <h3>LinkedIn</h3>
-                    <a href="https://linkedin.com/in/senaokuboyejo" target="_blank">Connect with me</a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank">Connect with me</a>
                 </div>
                 <div class="contact-item">
-                    <div class="icon">📅</div>
-                    <h3>Schedule</h3>
-                    <a href="https://calendly.com/senaokuboyejo" target="_blank">Book a meeting</a>
+                    <div class="contact-icon">🎓</div>
+                    <h3>ORCID</h3>
+                    <a href="https://orcid.org/your-id" target="_blank">View Publications</a>
                 </div>
                 <div class="contact-item">
-                    <div class="icon">🎓</div>
-                    <h3>Office Hours</h3>
-                    <a href="#contact">Tuesdays & Thursdays 2-4 PM</a>
+                    <div class="contact-icon">🏢</div>
+                    <h3>Office</h3>
+                    <p>Schedule a meeting<br>Office Hours: By Appointment</p>
                 </div>
             </div>
         </div>
@@ -596,55 +747,20 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
         // Header background on scroll
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
                 header.style.background = 'rgba(255, 255, 255, 0.98)';
             } else {
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
             }
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.timeline-item, .skill-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-        
-        // Animate portfolio items differently since they're now links
-        document.querySelectorAll('.portfolio-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
         });
     </script>
 </body>
