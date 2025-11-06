@@ -78,15 +78,7 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1" opacity="0.08"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-        }
+
 
         .hero::after {
             content: '';
@@ -170,31 +162,27 @@
             max-width: 600px;
         }
 
-        .role-tags {
+        .role-cards {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0.75rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
+            margin-top: 1rem;
         }
 
-        .role-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        .role-card {
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 0.75rem;
+            font-size: 0.8rem;
+            text-align: center;
+            transition: all 0.3s;
         }
 
-        .role-dot {
-            width: 6px;
-            height: 6px;
-            background: #fbbf24;
-            border-radius: 50%;
+        .role-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
 
         .cta-buttons {
@@ -682,27 +670,12 @@
                     </div>
                     
                     <h1>
-                        I design human‑centered systems <span class="gradient-text">that turn data into decisions.</span>
+                        Strategic technology integration that creates human-centered workflows for meaningful impact
                     </h1>
                     
                     <p class="hero-description">
-                        Bridging Data, Design, and Human-Centered Strategy. I blend <strong>MIS</strong>, <strong>analytics</strong>, and <strong>design</strong> to craft clear stories, ethical AI workflows, and useful products. From classrooms to real‑world teams, I help people see the signal—and act.
+                        I specialize in seamlessly integrating advanced technologies into educational and organizational environments, designing workflows that prioritize human needs while maximizing efficiency. Through strategic implementation of <strong>AI tools</strong>, <strong>data analytics</strong>, and <strong>agile methodologies</strong>, I create solutions that enhance human capabilities rather than replace them.
                     </p>
-                    
-                    <div class="role-tags">
-                        <span class="role-tag">
-                            🎓 Assistant Professor · MIS
-                        </span>
-                        <span class="role-tag">
-                            📋 Product Owner (Certified)
-                        </span>
-                        <span class="role-tag">
-                            📊 Data Storyteller · Designer
-                        </span>
-                        <span class="role-tag">
-                            🔬 Researcher
-                        </span>
-                    </div>
                     
                     <div class="cta-buttons">
                         <a href="#portfolio" class="btn btn-primary">
@@ -745,22 +718,18 @@
                 <div class="hero-visual">
                     <div class="profile-container">
                         <img src="Sena_Portrait1.PNG" alt="Dr. Sena Okuboyejo" class="profile-img">
-                        <div class="project-grid">
-                            <div class="project-card">
-                                <div class="project-title">Data Detectives</div>
-                                <div class="project-desc">Learning Comic & Workshops</div>
+                        <div class="role-cards">
+                            <div class="role-card">
+                                🎓 Assistant Professor · MIS
                             </div>
-                            <div class="project-card">
-                                <div class="project-title">STEM MBA · Analytics</div>
-                                <div class="project-desc">Curriculum & Industry Bridge</div>
+                            <div class="role-card">
+                                📋 Product Owner (Certified)
                             </div>
-                            <div class="project-card">
-                                <div class="project-title">AI in the Classroom</div>
-                                <div class="project-desc">Ethics · Tooling · Outcomes</div>
+                            <div class="role-card">
+                                📊 Data Storyteller · Designer
                             </div>
-                            <div class="project-card">
-                                <div class="project-title">Product Ownership</div>
-                                <div class="project-desc">Roadmaps · Research · MVPs</div>
+                            <div class="role-card">
+                                🔬 Researcher
                             </div>
                         </div>
                     </div>
