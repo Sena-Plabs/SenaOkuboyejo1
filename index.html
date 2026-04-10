@@ -13,757 +13,21 @@
     <meta name="twitter:title" content="Dr. Sena Okuboyejo | AI & Educational Innovation Leader">
     <meta name="twitter:description" content="Transforming education through AI, data-driven innovation, and equity-centered pedagogy.">
     <link rel="stylesheet" href="styles.css">
-    <style>
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2563eb;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #2563eb;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #333;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            z-index: 999;
-            padding: 1rem 0;
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
-
-        .mobile-menu ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .mobile-menu li {
-            padding: 0;
-        }
-
-        .mobile-menu a {
-            display: block;
-            padding: 1rem 2rem;
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .mobile-menu a:hover {
-            background: #f8fafc;
-            color: #2563eb;
-        }
-
-        .header-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .header-cta:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            display: flex;
-            align-items: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: -100px;
-            left: -100px;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(40px);
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text {
-            text-align: left;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            margin-bottom: 2rem;
-            animation: pulse-glow 2s infinite;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: #10b981;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255,255,255,0.1); }
-            50% { box-shadow: 0 0 30px rgba(255,255,255,0.2); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-
-        .hero-text .gradient-text {
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.7;
-            max-width: 600px;
-        }
-
-        .role-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .role-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 0.75rem;
-            font-size: 0.8rem;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .role-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #2563eb;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-            max-width: 500px;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 1.8rem;
-            font-weight: 800;
-            display: block;
-            color: #fbbf24;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            opacity: 0.8;
-            margin-top: 0.5rem;
-        }
-
-        .hero-visual {
-            position: relative;
-        }
-
-        .hero-visual::before {
-            content: '';
-            position: absolute;
-            inset: -20px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.2));
-            border-radius: 24px;
-            filter: blur(20px);
-            z-index: -1;
-        }
-
-        .profile-container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 1rem;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-        }
-
-        .profile-img {
-            width: 100%;
-            border-radius: 16px;
-            aspect-ratio: 4/5;
-            object-fit: cover;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 1rem;
-            transition: all 0.3s;
-        }
-
-        .project-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .project-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .project-desc {
-            font-size: 0.75rem;
-            opacity: 0.8;
-            line-height: 1.3;
-        }
-
-        /* About Section */
-        .about {
-            padding: 6rem 0;
-            background: #f8fafc;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #1e293b;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 4rem;
-            align-items: start;
-            margin-bottom: 4rem;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            color: #2563eb;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .highlight-quote {
-            background: linear-gradient(135deg, #2563eb, #3b82f6);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            font-style: italic;
-            font-size: 1.2rem;
-            text-align: center;
-            margin: 2rem 0;
-            position: relative;
-        }
-
-        .highlight-quote::before {
-            content: '"';
-            font-size: 4rem;
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            opacity: 0.3;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            border-left: 4px solid #2563eb;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .skill-card h4 {
-            color: #2563eb;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        /* Experience Section */
-        .experience {
-            padding: 6rem 0;
-            background: white;
-        }
-
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e2e8f0;
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            width: 50%;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            padding-right: 2rem;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-            padding-left: 2rem;
-        }
-
-        .timeline-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #2563eb;
-            border-radius: 50%;
-            top: 2rem;
-        }
-
-        .timeline-item:nth-child(odd)::before {
-            right: -10px;
-        }
-
-        .timeline-item:nth-child(even)::before {
-            left: -10px;
-        }
-
-        .timeline-content h3 {
-            color: #2563eb;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-date {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        /* Portfolio Section */
-        .portfolio {
-            padding: 6rem 0;
-            background: #f8fafc;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .portfolio-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-
-        .portfolio-header {
-            height: 200px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            position: relative;
-        }
-
-        .portfolio-content {
-            padding: 2rem;
-        }
-
-        .portfolio-content h3 {
-            color: #2563eb;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .portfolio-content p {
-            color: #64748b;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .portfolio-link {
-            display: inline-block;
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .portfolio-link:hover {
-            color: #1d4ed8;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 6rem 0;
-            background: #1e293b;
-            color: white;
-        }
-
-        .contact .section-title {
-            color: white;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            transition: background 0.3s;
-        }
-
-        .contact-item:hover {
-            background: rgba(255,255,255,0.15);
-        }
-
-        .contact-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-item h3 {
-            margin-bottom: 1rem;
-        }
-
-        .contact-item a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
-
-        /* Mobile Responsive */
-        /* Additional inline styles for sections not yet in external CSS */
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e2e8f0;
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            width: 50%;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            padding-right: 2rem;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-            padding-left: 2rem;
-        }
-        
-        .timeline-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #2563eb;
-            border-radius: 50%;
-            top: 2rem;
-        }
-        
-        .timeline-item:nth-child(odd)::before {
-            right: -10px;
-        }
-        
-        .timeline-item:nth-child(even)::before {
-            left: -10px;
-        }
-        
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
-            }
-            .timeline-item {
-                width: 100%;
-                left: 0 !important;
-                padding-left: 3rem !important;
-                padding-right: 0 !important;
-            }
-            .timeline-item::before {
-                left: 10px !important;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Sena Okuboyejo</div>
+            <div class="logo">Dr. Sena Okuboyejo</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#" class="header-cta" onclick="alert('CV download will be available soon'); return false;">
-                <span>📄</span> Download CV
+            <a href="#contact" class="header-cta">
+                <span>📧</span> Get in Touch
             </a>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 ☰
@@ -776,10 +40,9 @@
         <ul>
             <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
             <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
-            <li><a href="#experience" onclick="toggleMobileMenu()">Experience</a></li>
+            <li><a href="#achievements" onclick="toggleMobileMenu()">Achievements</a></li>
             <li><a href="#portfolio" onclick="toggleMobileMenu()">Portfolio</a></li>
             <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
-            <li><a href="#" onclick="alert('CV download will be available soon'); return false;">📄 Download CV</a></li>
         </ul>
     </div>
 
@@ -788,17 +51,20 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div style="display: inline-block; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50px; padding: 0.5rem 1rem; font-size: 0.85rem; margin-bottom: 1rem; animation: fadeIn 1s;">
-                        ✨ Transforming Education Through AI & Data-Driven Innovation
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Available for Collaboration
                     </div>
                     
-                    <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">
-                        Dr. Sena Okuboyejo
-                    </h1>
+                    <h1>Dr. Sena Okuboyejo</h1>
                     
-                    <h2 style="font-size: 1.4rem; font-weight: 300; margin-bottom: 1.5rem; opacity: 0.9;">
+                    <h2 class="subtitle">
                         Assistant Professor | CSPO Certified | AI & Educational Innovation Leader
                     </h2>
+                    
+                    <p class="hero-description">
+                        Transforming education through AI-enhanced pedagogy, data-driven innovation, and equity-centered design. Bridging the gap between complex data insights and meaningful human experiences.
+                    </p>
                     
                     <!-- Social Media Icons -->
                     <div class="social-links">
@@ -816,7 +82,7 @@
                         </a>
                     </div>
                     
-                    <div class="cta-buttons" style="margin-bottom: 2rem;">
+                    <div class="cta-buttons">
                         <a href="#portfolio" class="btn btn-primary">
                             View Portfolio
                         </a>
@@ -825,7 +91,7 @@
                         </a>
                     </div>
                     
-                    <!-- Expanded Statistics - 6 Metrics -->
+                    <!-- Simplified Statistics - 4 Key Metrics -->
                     <div class="hero-stats">
                         <div class="stat-card">
                             <div class="counter stat-number" data-target="17">0</div>
@@ -840,16 +106,8 @@
                             <div class="stat-label">Best Paper Award</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">4.5</div>
-                            <div class="stat-label">Avg Rating /5</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="counter stat-number" data-target="6">0</div>
-                            <div class="stat-label">Students Mentored</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">AIS</div>
-                            <div class="stat-label">Chapter Founder</div>
+                            <div class="stat-number">CSPO</div>
+                            <div class="stat-label">Certified</div>
                         </div>
                     </div>
                 </div>
@@ -857,451 +115,147 @@
                 <div class="hero-visual">
                     <div class="profile-container">
                         <img src="Sena_Portrait1.PNG" alt="Dr. Sena Okuboyejo - Assistant Professor specializing in AI-enhanced pedagogy and educational technology" class="profile-img">
-                        
-                        <!-- Floating Achievement Badges -->
-                        <div class="floating-badge badge-1">
-                            <div class="badge-icon">🏆</div>
-                            <div class="badge-text">Best Paper</div>
-                        </div>
-                        
-                        <div class="floating-badge badge-2">
-                            <div class="badge-icon">📋</div>
-                            <div class="badge-text">CSPO</div>
-                        </div>
-                        
-                        <div class="floating-badge badge-3">
-                            <div class="badge-icon">🤖</div>
-                            <div class="badge-text">AI Expert</div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Areas of Expertise -->
-    <section style="padding: 3rem 0; background: #f8fafc;">
-        <div class="container">
-            <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
-                <p style="text-align: center; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin-bottom: 1.5rem;">Areas of Expertise</p>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-                    <div style="padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: #2563eb; border: 1px solid #e2e8f0; border-radius: 8px; background: #fafafa; font-weight: 500; white-space: nowrap;">Educational Technology</div>
-                    <div style="padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: #2563eb; border: 1px solid #e2e8f0; border-radius: 8px; background: #fafafa; font-weight: 500; white-space: nowrap;">Data Analytics & Visualization</div>
-                    <div style="padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: #2563eb; border: 1px solid #e2e8f0; border-radius: 8px; background: #fafafa; font-weight: 500; white-space: nowrap;">Product Management</div>
-                    <div style="padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: #2563eb; border: 1px solid #e2e8f0; border-radius: 8px; background: #fafafa; font-weight: 500; white-space: nowrap;">Research & Innovation</div>
-                    <div style="padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: #2563eb; border: 1px solid #e2e8f0; border-radius: 8px; background: #fafafa; font-weight: 500; white-space: nowrap;">Strategic Consulting</div>
-                    <div style="padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: #2563eb; border: 1px solid #e2e8f0; border-radius: 8px; background: #fafafa; font-weight: 500; white-space: nowrap;">Digital Health</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Featured Achievements Section -->
-    <section style="padding: 4rem 0; background: white;">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #1e293b; margin-bottom: 1rem;">🏆 Highlights & Recognition</h2>
-            <p style="text-align: center; color: #64748b; font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Recent achievements demonstrating excellence in teaching, research, and student mentorship</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-                <!-- Achievement 1: Best Paper Award -->
-                <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #fbbf24; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
-                    <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">🏆</div>
-                    <h3 style="color: #92400e; font-size: 1.2rem; margin-bottom: 0.5rem; text-align: center;">Best Paper Award</h3>
-                    <p style="color: #78350f; font-size: 0.9rem; text-align: center; margin-bottom: 0.5rem;">80th Annual SAM International Business Conference 2025</p>
-                    <p style="color: #78350f; font-size: 0.85rem; line-height: 1.5; text-align: center;">"A LIWC-based Sentiment Analysis of Depression Apps"</p>
-                </div>
-                
-                <!-- Achievement 2: SCLC First Place -->
-                <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #10b981; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
-                    <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">🥇</div>
-                    <h3 style="color: #065f46; font-size: 1.2rem; margin-bottom: 0.5rem; text-align: center;">SCLC First Place Winner</h3>
-                    <p style="color: #047857; font-size: 0.9rem; text-align: center; margin-bottom: 0.5rem;">Student Chapter Leadership Conference</p>
-                    <p style="color: #047857; font-size: 0.85rem; line-height: 1.5; text-align: center;">Mentored student team to first place victory in their category</p>
-                </div>
-                
-                <!-- Achievement 3: PDG Grant -->
-                <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #3b82f6; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
-                    <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">💰</div>
-                    <h3 style="color: #1e3a8a; font-size: 1.2rem; margin-bottom: 0.5rem; text-align: center;">$1,500 PDG Grant</h3>
-                    <p style="color: #1e40af; font-size: 0.9rem; text-align: center; margin-bottom: 0.5rem;">AMCIS 2026 Conference</p>
-                    <p style="color: #1e40af; font-size: 0.85rem; line-height: 1.5; text-align: center;">Professional Development Grant for premier information systems conference</p>
-                </div>
-                
-                <!-- Achievement 4: Health Informatics Certificate -->
-                <div style="background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%); border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #a855f7; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
-                    <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">🎓</div>
-                    <h3 style="color: #581c87; font-size: 1.2rem; margin-bottom: 0.5rem; text-align: center;">Graduate Certificate Development</h3>
-                    <p style="color: #6b21a8; font-size: 0.9rem; text-align: center; margin-bottom: 0.5rem;">Health Informatics Program</p>
-                    <p style="color: #6b21a8; font-size: 0.85rem; line-height: 1.5; text-align: center;">Led curriculum development for new interdisciplinary graduate certificate</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Trust Indicators / Institutional Logos -->
-    <section style="padding: 3rem 0; background: #f8fafc;">
-        <div class="container">
-            <p style="text-align: center; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin-bottom: 2rem;">Affiliated With & Certified By</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; align-items: center;">
-                <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.05)'">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏫</div>
-                    <div style="font-size: 0.9rem; font-weight: 600; color: #2563eb;">Metro State</div>
-                    <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">University</div>
-                </div>
-                <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.05)'">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
-                    <div style="font-size: 0.9rem; font-weight: 600; color: #2563eb;">AIS</div>
-                    <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">Association for IS</div>
-                </div>
-                <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.05)'">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎯</div>
-                    <div style="font-size: 0.9rem; font-weight: 600; color: #2563eb;">SAM</div>
-                    <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">Best Paper 2025</div>
-                </div>
-                <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.05)'">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤖</div>
-                    <div style="font-size: 0.9rem; font-weight: 600; color: #2563eb;">Google AI</div>
-                    <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">8 Certifications</div>
-                </div>
-                <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.05)'">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
-                    <div style="font-size: 0.9rem; font-weight: 600; color: #2563eb;">SAP</div>
-                    <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">Analytics Cloud</div>
-                </div>
-                <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.05)'">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📋</div>
-                    <div style="font-size: 0.9rem; font-weight: 600; color: #2563eb;">CSPO</div>
-                    <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">Scrum Alliance</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             
-            <!-- Three-Column Layout -->
-            <div style="display: grid; grid-template-columns: 300px 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 4rem;">
-                <!-- Column 1: Professional Photo & Bio -->
-                <div>
+            <div class="about-grid">
+                <!-- Left Column: Image & Quick Info -->
+                <div class="about-sidebar">
                     <div class="about-image">
                         <img src="Sena_Portrait .png" alt="Dr. Sena Okuboyejo - Assistant Professor and Educational Innovation Leader">
                     </div>
-                    <div style="margin-top: 1.5rem; text-align: center;">
-                        <a href="#contact" style="display: inline-block; padding: 0.75rem 1.5rem; background: #2563eb; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s;" onmouseover="this.style.background='#1d4ed8'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#2563eb'; this.style.transform='translateY(0)'">
-                            Let's Connect
-                        </a>
+                    
+                    <div class="expertise-tags">
+                        <h4>Areas of Expertise</h4>
+                        <div class="tag">Educational Technology</div>
+                        <div class="tag">Data Analytics</div>
+                        <div class="tag">Product Management</div>
+                        <div class="tag">AI Integration</div>
+                        <div class="tag">Digital Health</div>
+                        <div class="tag">Research & Innovation</div>
+                    </div>
+                    
+                    <div class="quick-links">
+                        <a href="scholarship.html" class="quick-link-btn">📚 View Publications</a>
+                        <a href="teaching.html" class="quick-link-btn">🎓 Teaching Portfolio</a>
+                        <a href="#contact" class="quick-link-btn">📧 Contact Me</a>
                     </div>
                 </div>
                 
-                <!-- Column 2: Research Interests -->
-                <div>
-                    <h3 style="color: #2563eb; font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <span>🔬</span> Research Interests
-                    </h3>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; border-left: 3px solid #3b82f6;">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-                                <span style="font-size: 1.5rem;">🧠</span>
-                                <strong style="color: #1e293b;">Digital Mental Health</strong>
+                <!-- Right Column: Main Content -->
+                <div class="about-content">
+                    <h3>Designing Human-Centered Solutions Through Data & Strategy</h3>
+                    <p>
+                        As an Assistant Professor and Certified Scrum Product Owner, I bridge the gap between complex data insights and meaningful human experiences through thoughtful design and strategic implementation.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎯</div>
+                            <div class="highlight-content">
+                                <h4>Teaching Innovation</h4>
+                                <p>Developing critical thinking through investigative data analysis, collaborative projects, and the Data Detectives curriculum. Students build confidence through presentations and conference showcases.</p>
                             </div>
-                            <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">Sentiment analysis and user experience in mental health apps</p>
                         </div>
                         
-                        <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; border-left: 3px solid #8b5cf6;">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-                                <span style="font-size: 1.5rem;">🏥</span>
-                                <strong style="color: #1e293b;">Healthcare Informatics</strong>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🔬</div>
+                            <div class="highlight-content">
+                                <h4>Research Focus</h4>
+                                <p>Digital mental health, healthcare informatics, AI-enhanced pedagogy, and equity-centered data analytics. Published in leading journals with focus on real-world impact.</p>
                             </div>
-                            <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">Clinical decision support systems and ontological models</p>
                         </div>
                         
-                        <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; border-left: 3px solid #10b981;">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-                                <span style="font-size: 1.5rem;">🎓</span>
-                                <strong style="color: #1e293b;">Educational Technology</strong>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🚀</div>
+                            <div class="highlight-content">
+                                <h4>Leadership & Service</h4>
+                                <p>Founded Metro State's AIS Student Chapter, leading NASH-Google micro-credentials program, and mentoring students to conference success and career advancement.</p>
                             </div>
-                            <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">AI-enhanced pedagogy and learning application design</p>
                         </div>
-                        
-                        <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; border-left: 3px solid #f59e0b;">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-                                <span style="font-size: 1.5rem;">📊</span>
-                                <strong style="color: #1e293b;">Data Analytics</strong>
+                    </div>
+                    
+                    <div class="credentials">
+                        <h4>Current Position & Credentials</h4>
+                        <div class="credential-list">
+                            <div class="credential-item">
+                                <strong>Assistant Professor</strong>
+                                <span>Metropolitan State University | 2022 - Present</span>
                             </div>
-                            <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">Equity-centered analytics and data visualization</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Column 3: Current Projects -->
-                <div>
-                    <h3 style="color: #2563eb; font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <span>🚀</span> Current Projects
-                    </h3>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.25rem; border-radius: 12px; color: white; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                                <span style="font-size: 1.5rem;">📚</span>
-                                <strong style="font-size: 1.1rem;">AIS Student Chapter</strong>
+                            <div class="credential-item">
+                                <strong>CSPO Certification</strong>
+                                <span>Scrum Alliance | 2024</span>
                             </div>
-                            <p style="font-size: 0.85rem; margin: 0; line-height: 1.5; opacity: 0.95;">Leading Metro State's AIS chapter, providing professional development and networking opportunities</p>
-                            <div style="margin-top: 0.75rem; padding: 0.5rem; background: rgba(255,255,255,0.2); border-radius: 6px; font-size: 0.75rem; text-align: center;">Active • Founded 2025</div>
-                        </div>
-                        
-                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 1.25rem; border-radius: 12px; color: white; box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                                <span style="font-size: 1.5rem;">🎯</span>
-                                <strong style="font-size: 1.1rem;">NASH-Google Program</strong>
+                            <div class="credential-item">
+                                <strong>Google AI in Education</strong>
+                                <span>8 Specialized Certifications | 2024</span>
                             </div>
-                            <p style="font-size: 0.85rem; margin: 0; line-height: 1.5; opacity: 0.95;">Micro-credentials program providing industry-recognized certifications for students</p>
-                            <div style="margin-top: 0.75rem; padding: 0.5rem; background: rgba(255,255,255,0.2); border-radius: 6px; font-size: 0.75rem; text-align: center;">Ongoing Partnership</div>
-                        </div>
-                        
-                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 1.25rem; border-radius: 12px; color: white; box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                                <span style="font-size: 1.5rem;">🤖</span>
-                                <strong style="font-size: 1.1rem;">AI-Enhanced Pedagogy</strong>
+                            <div class="credential-item">
+                                <strong>Tableau Desktop Specialist</strong>
+                                <span>Data Visualization Certified | 2023</span>
                             </div>
-                            <p style="font-size: 0.85rem; margin: 0; line-height: 1.5; opacity: 0.95;">Research on effective prompt crafting for inclusive and engaging teaching</p>
-                            <div style="margin-top: 0.75rem; padding: 0.5rem; background: rgba(255,255,255,0.2); border-radius: 6px; font-size: 0.75rem; text-align: center;">Research in Progress</div>
-                        </div>
-                        
-                        <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 1.25rem; border-radius: 12px; color: white; box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                                <span style="font-size: 1.5rem;">🔍</span>
-                                <strong style="font-size: 1.1rem;">Data Detectives Curriculum</strong>
-                            </div>
-                            <p style="font-size: 0.85rem; margin: 0; line-height: 1.5; opacity: 0.95;">Investigative data analysis approach for critical thinking development</p>
-                            <div style="margin-top: 0.75rem; padding: 0.5rem; background: rgba(255,255,255,0.2); border-radius: 6px; font-size: 0.75rem; text-align: center;">Active Development</div>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Main About Text -->
-            <div class="about-text" style="max-width: 100%;">
-                <h3>Designing Human-Centered Solutions Through Data & Strategy</h3>
-                <p><strong>Where strategic thinking meets human-centered design.</strong> As an Assistant Professor and Certified Scrum Product Owner, I bridge the gap between complex data insights and meaningful human experiences through thoughtful design and strategic implementation.</p>
-                
-                <p>🎯 <strong>Teaching Innovation:</strong> Developing critical thinking through investigative data analysis and collaborative team-based projects, empowering students to uncover insights, craft compelling narratives, and master analytical problem-solving skills. Students build confidence through in-class presentations and showcase their work at student conferences, bridging technical expertise with professional communication skills.</p>
-                
-                <p>🚀 <strong>AI Workflow Architecture:</strong> Designing and implementing intelligent workflows that enhance human capabilities while maintaining focus on user experience and accessibility.</p>
-                
-                <p>💡 <strong>Strategic Product Leadership:</strong> CSPO-certified professional who combines agile methodologies with human-centered design principles to create impactful educational technology solutions.</p>
-            </div>
-            
-            <div class="highlight-quote">
-                I design solutions that put humans at the center of technological innovation, creating meaningful connections between data insights and real-world impact.
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">🎯</div>
-                    <h4>Teaching Innovation Excellence</h4>
-                    <p>Critical thinking development through investigative approaches, collaborative team-based projects, in-class presentations for confidence building, and student conference showcases</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">📖</div>
-                    <h4>Data Storytelling Strategy</h4>
-                    <p>Narrative crafting abilities for compelling storytelling, analytical problem-solving competencies, and bridge building between technical skills and practical application</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🔧</div>
-                    <h4>AI Workflow Architecture</h4>
-                    <p>Designing intelligent systems, workflow optimization, and human-centered AI implementation with professional communication skills development</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">⚡</div>
-                    <h4>Strategic Product Leadership</h4>
-                    <p>CSPO certified, agile methodologies, bridge building between technical and presentation abilities, and cross-functional team leadership</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Featured Publications Section -->
-    <section style="padding: 4rem 0; background: white;">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #1e293b; margin-bottom: 1rem;">📚 Recent Publications</h2>
-            <p style="text-align: center; color: #64748b; font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Selected publications demonstrating research impact in digital health, educational technology, and data analytics</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto 2rem;">
-                <!-- Publication 1: Best Paper Award -->
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #fbbf24; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
-                    <div style="position: absolute; top: 1rem; right: 1rem; background: #fbbf24; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">🏆 Best Paper</div>
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
-                    <h3 style="color: #1e293b; font-size: 1.1rem; margin-bottom: 0.75rem; line-height: 1.4;">A LIWC-based Sentiment Analysis of Depression Apps</h3>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Okuboyejo, S. & Walczak, S.</strong></p>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 1rem;"><em>80th Annual SAM International Business Conference, 2025</em></p>
-                    <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">Implications for consumer behavior and business in digital mental health applications.</p>
-                    <a href="scholarship.html" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More →</a>
-                </div>
-                
-                <!-- Publication 2 -->
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'; this.style.borderColor='#2563eb'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'; this.style.borderColor='#e2e8f0'">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧠</div>
-                    <h3 style="color: #1e293b; font-size: 1.1rem; margin-bottom: 0.75rem; line-height: 1.4;">Insights from User Reviews to Improve Suicide Prevention Apps</h3>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Okuboyejo, S., Han, S., Jha, S., Eneja, C., & Orji, R.</strong></p>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 1rem;"><em>International Journal of Human–Computer Interaction, 2025</em></p>
-                    <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">Machine learning and thematic analysis approach to mental health technology.</p>
-                    <a href="scholarship.html" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More →</a>
-                </div>
-                
-                <!-- Publication 3 -->
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'; this.style.borderColor='#2563eb'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'; this.style.borderColor='#e2e8f0'">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎓</div>
-                    <h3 style="color: #1e293b; font-size: 1.1rem; margin-bottom: 0.75rem; line-height: 1.4;">Evaluating User Experience in Learning Applications</h3>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Okuboyejo, S., Adekanye, O., & Ayeni, F.</strong></p>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 1rem;"><em>International Journal of Emerging Technologies in Learning, 2025</em></p>
-                    <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">UEQ-based evaluation among university students in Nigeria.</p>
-                    <a href="scholarship.html" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More →</a>
-                </div>
-            </div>
-            
-            <div style="text-align: center;">
-                <a href="scholarship.html" style="display: inline-block; padding: 1rem 2rem; background: #2563eb; color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s;" onmouseover="this.style.background='#1d4ed8'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(37, 99, 235, 0.3)'" onmouseout="this.style.background='#2563eb'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    View All Publications →
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Student Success Stories Section -->
-    <section style="padding: 4rem 0; background: #f8fafc;">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #1e293b; margin-bottom: 1rem;">🎓 Student Success Stories</h2>
-            <p style="text-align: center; color: #64748b; font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Empowering students to achieve excellence through mentorship and guidance</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto 2rem;">
-                <!-- Success Story 1: SCLC Winners -->
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
-                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">🥇</div>
-                    <h3 style="color: #1e293b; font-size: 1.2rem; margin-bottom: 0.75rem;">SCLC First Place Winners</h3>
-                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">"Dr. Okuboyejo's mentorship was instrumental in our success. Her guidance helped us develop a winning presentation and build confidence in our research abilities."</p>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                        <div style="width: 40px; height: 40px; background: #e0e7ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🎓</div>
-                        <div>
-                            <p style="margin: 0; font-weight: 600; color: #1e293b; font-size: 0.9rem;">Student Team</p>
-                            <p style="margin: 0; font-size: 0.8rem; color: #64748b;">SCLC 2025</p>
-                        </div>
-                    </div>
-                    <div style="margin-top: 1rem; padding: 0.75rem; background: #f0fdf4; border-radius: 8px; border-left: 3px solid #10b981;">
-                        <p style="margin: 0; font-size: 0.85rem; color: #065f46;"><strong>Achievement:</strong> First place in their category at Student Chapter Leadership Conference</p>
-                    </div>
-                </div>
-                
-                <!-- Success Story 2: Conference Presentations -->
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
-                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #2563eb); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);">🎯</div>
-                    <h3 style="color: #1e293b; font-size: 1.2rem; margin-bottom: 0.75rem;">Research Conference Success</h3>
-                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">"The research skills and presentation techniques I learned have been invaluable. Dr. Okuboyejo's feedback helped me communicate complex ideas clearly and confidently."</p>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                        <div style="width: 40px; height: 40px; background: #dbeafe; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">👩🎓</div>
-                        <div>
-                            <p style="margin: 0; font-weight: 600; color: #1e293b; font-size: 0.9rem;">Graduate Student</p>
-                            <p style="margin: 0; font-size: 0.8rem; color: #64748b;">Fall 2025</p>
-                        </div>
-                    </div>
-                    <div style="margin-top: 1rem; padding: 0.75rem; background: #eff6ff; border-radius: 8px; border-left: 3px solid #3b82f6;">
-                        <p style="margin: 0; font-size: 0.85rem; color: #1e40af;"><strong>Achievement:</strong> Presented at Fall 2025 Student Research Conference</p>
-                    </div>
-                </div>
-                
-                <!-- Success Story 3: Career Development -->
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
-                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);">🚀</div>
-                    <h3 style="color: #1e293b; font-size: 1.2rem; margin-bottom: 0.75rem;">Career Advancement</h3>
-                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">"The Data Detectives curriculum and hands-on projects prepared me for real-world challenges. I secured a data analyst position thanks to the skills I developed in class."</p>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                        <div style="width: 40px; height: 40px; background: #ede9fe; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">👨💼</div>
-                        <div>
-                            <p style="margin: 0; font-weight: 600; color: #1e293b; font-size: 0.9rem;">MIS Graduate</p>
-                            <p style="margin: 0; font-size: 0.8rem; color: #64748b;">Class of 2024</p>
-                        </div>
-                    </div>
-                    <div style="margin-top: 1rem; padding: 0.75rem; background: #faf5ff; border-radius: 8px; border-left: 3px solid #8b5cf6;">
-                        <p style="margin: 0; font-size: 0.85rem; color: #6b21a8;"><strong>Outcome:</strong> Data Analyst at Fortune 500 company</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <div style="display: inline-block; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                    <p style="font-size: 2.5rem; font-weight: 800; color: #2563eb; margin-bottom: 0.5rem;">6+</p>
-                    <p style="font-size: 1rem; color: #64748b; margin: 0;">Student Conference Presentations Mentored</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section style="padding: 3rem 0; background: white;">
-        <div class="container">
-            <div style="background: #f8fafc; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
-                <p style="text-align: center; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin-bottom: 1.5rem;">Featured in projects & collaborations</p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; opacity: 0.7;">
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #64748b; border: 1px solid #f1f5f9; border-radius: 8px; background: #fafafa;">Metro State</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #64748b; border: 1px solid #f1f5f9; border-radius: 8px; background: #fafafa;">OLC</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #64748b; border: 1px solid #f1f5f9; border-radius: 8px; background: #fafafa;">AIS</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #64748b; border: 1px solid #f1f5f9; border-radius: 8px; background: #fafafa;">Coursera</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #64748b; border: 1px solid #f1f5f9; border-radius: 8px; background: #fafafa;">SAP</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #64748b; border: 1px solid #f1f5f9; border-radius: 8px; background: #fafafa;">Notion</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience & Achievements Section -->
-    <section id="experience" class="experience">
+    <!-- Key Achievements Section -->
+    <section id="achievements" class="achievements">
         <div class="container">
-            <h2 class="section-title">Experience & Achievements</h2>
-            <div style="max-width: 800px; margin: 0 auto;">
-                
-                <!-- Roles Subsection -->
-                <div style="margin-bottom: 3rem;">
-                    <h3 style="color: #2563eb; font-size: 1.3rem; margin-bottom: 1.5rem;">Roles</h3>
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem 0;">
-                        <div style="font-size: 1.5rem; margin-top: 0.25rem;">🎓</div>
-                        <div style="flex: 1;">
-                            <h4 style="color: #2563eb; margin-bottom: 0.25rem; font-size: 1.1rem;">Assistant Professor</h4>
-                            <div style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.5rem;">2022 - Present</div>
-                            <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">Teaching MIS courses with equity-centered pedagogy and AI integration. Developed Data Detectives curriculum.</p>
-                        </div>
-                    </div>
+            <h2 class="section-title">Key Achievements</h2>
+            <p class="section-subtitle">Recent highlights demonstrating excellence in teaching, research, and student mentorship</p>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card best-paper">
+                    <div class="achievement-icon">🏆</div>
+                    <h3>Best Paper Award</h3>
+                    <p class="achievement-venue">80th Annual SAM International Business Conference 2025</p>
+                    <p class="achievement-desc">"A LIWC-based Sentiment Analysis of Depression Apps" - Research on consumer behavior in digital mental health applications.</p>
                 </div>
                 
-                <!-- Certifications Subsection -->
-                <div>
-                    <h3 style="color: #2563eb; font-size: 1.3rem; margin-bottom: 1.5rem;">Professional Certifications</h3>
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem 0; border-bottom: 1px solid #e2e8f0;">
-                        <div style="font-size: 1.5rem; margin-top: 0.25rem;">📋</div>
-                        <div style="flex: 1;">
-                            <h4 style="color: #2563eb; margin-bottom: 0.25rem; font-size: 1.1rem;">CSPO Certification</h4>
-                            <div style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.5rem;">2024</div>
-                            <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">Advanced certification in agile methodologies and product management strategies.</p>
-                        </div>
-                    </div>
-                    
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem 0; border-bottom: 1px solid #e2e8f0;">
-                        <div style="font-size: 1.5rem; margin-top: 0.25rem;">🤖</div>
-                        <div style="flex: 1;">
-                            <h4 style="color: #2563eb; margin-bottom: 0.25rem; font-size: 1.1rem;">Google AI in Education</h4>
-                            <div style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.5rem;">2024</div>
-                            <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">Specialized training in AI applications for educational technology and workflow automation.</p>
-                        </div>
-                    </div>
-                    
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem 0;">
-                        <div style="font-size: 1.5rem; margin-top: 0.25rem;">📊</div>
-                        <div style="flex: 1;">
-                            <h4 style="color: #2563eb; margin-bottom: 0.25rem; font-size: 1.1rem;">Tableau Desktop Specialist</h4>
-                            <div style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.5rem;">2023</div>
-                            <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">Professional certification in data visualization and business intelligence storytelling.</p>
-                        </div>
-                    </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🥇</div>
+                    <h3>SCLC First Place Winner</h3>
+                    <p class="achievement-venue">Student Chapter Leadership Conference</p>
+                    <p class="achievement-desc">Mentored student team to first place victory, demonstrating excellence in research guidance and presentation coaching.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">📚</div>
+                    <h3>AIS Chapter Founder</h3>
+                    <p class="achievement-venue">Metropolitan State University | 2025</p>
+                    <p class="achievement-desc">Established and leading the university's first AIS student chapter, providing professional development opportunities.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">💰</div>
+                    <h3>$1,500 PDG Grant</h3>
+                    <p class="achievement-venue">AMCIS 2026 Conference</p>
+                    <p class="achievement-desc">Professional Development Grant awarded for research presentation at premier information systems conference.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">🎓</div>
+                    <h3>Graduate Certificate Development</h3>
+                    <p class="achievement-venue">Health Informatics Program</p>
+                    <p class="achievement-desc">Led curriculum development for new interdisciplinary graduate certificate program in health informatics.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">👥</div>
+                    <h3>6+ Student Presentations</h3>
+                    <p class="achievement-venue">Conference Mentorship</p>
+                    <p class="achievement-desc">Mentored students to successful conference presentations, building research and communication skills.</p>
                 </div>
             </div>
         </div>
@@ -1311,6 +265,8 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <h2 class="section-title">Academic Portfolio</h2>
+            <p class="section-subtitle">Explore my work across teaching, research, and service</p>
+            
             <div class="portfolio-grid">
                 <div class="portfolio-card">
                     <div class="portfolio-header">
@@ -1318,47 +274,51 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>Teaching Excellence</h3>
-                        <p>Innovative curriculum design, Data Detectives project, equity-centered pedagogy, and student-centered learning approaches across multiple academic years.</p>
+                        <p>Innovative curriculum design, Data Detectives project, equity-centered pedagogy, and student-centered learning approaches.</p>
                         <a href="teaching.html" class="portfolio-link">Explore Teaching →</a>
                     </div>
                 </div>
+                
                 <div class="portfolio-card">
                     <div class="portfolio-header">
                         📚
                     </div>
                     <div class="portfolio-content">
                         <h3>Scholarship & Research</h3>
-                        <p>Publications, conference presentations, collaborative research, peer review activities, and curriculum development initiatives.</p>
-                        <a href="scholarship.html" class="portfolio-link">View Scholarship →</a>
+                        <p>7+ publications in digital health, educational technology, and data analytics. Best Paper Award winner.</p>
+                        <a href="scholarship.html" class="portfolio-link">View Research →</a>
                     </div>
                 </div>
+                
                 <div class="portfolio-card">
                     <div class="portfolio-header">
                         🚀
                     </div>
                     <div class="portfolio-content">
-                        <h3>Continuing Preparation</h3>
-                        <p>Professional certifications, memberships, capacity building activities, and training in DEI, technology integration, and research methods.</p>
+                        <h3>Professional Development</h3>
+                        <p>CSPO certified, Google AI trained, with ongoing capacity building in DEI and technology integration.</p>
                         <a href="continuing-preparation.html" class="portfolio-link">See Growth →</a>
                     </div>
                 </div>
+                
                 <div class="portfolio-card">
                     <div class="portfolio-header">
                         👥
                     </div>
                     <div class="portfolio-content">
                         <h3>Service to Students</h3>
-                        <p>Student mentoring, accessibility initiatives, office hours, and comprehensive support programs for student growth and development.</p>
+                        <p>Student mentoring, AIS chapter leadership, accessibility initiatives, and comprehensive support programs.</p>
                         <a href="service-student.html" class="portfolio-link">Student Impact →</a>
                     </div>
                 </div>
+                
                 <div class="portfolio-card">
                     <div class="portfolio-header">
                         🏛️
                     </div>
                     <div class="portfolio-content">
                         <h3>Service to University</h3>
-                        <p>Department and college service, university-wide initiatives, and institutional contributions to academic excellence and community building.</p>
+                        <p>Department and college service, curriculum development, and institutional contributions to academic excellence.</p>
                         <a href="service-university.html" class="portfolio-link">University Service →</a>
                     </div>
                 </div>
@@ -1369,34 +329,38 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <div class="status-badge" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50px; padding: 0.5rem 1rem; font-size: 0.9rem; margin-bottom: 1rem;">
-                    <span class="status-dot" style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite;"></span>
+            <div class="contact-header">
+                <div class="status-badge">
+                    <span class="status-dot"></span>
                     Available for collaborations
                 </div>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Ready to collaborate on innovative educational technology solutions?</p>
             </div>
-            <h2 class="section-title">Let's Connect</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">Ready to collaborate on innovative educational technology solutions?</p>
+            
             <div class="contact-grid">
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
                     <h3>Email</h3>
                     <a href="mailto:senanu.okuboyejo@metrostate.edu">senanu.okuboyejo@metrostate.edu</a>
                 </div>
+                
                 <div class="contact-item">
                     <div class="contact-icon">💼</div>
                     <h3>LinkedIn</h3>
                     <a href="https://www.linkedin.com/in/senaokuboyejo" target="_blank">Connect with me</a>
                 </div>
+                
                 <div class="contact-item">
                     <div class="contact-icon">🎓</div>
                     <h3>Google Scholar</h3>
                     <a href="https://scholar.google.com/citations?user=zU_gVnEAAAAJ&hl=en" target="_blank">View Publications</a>
                 </div>
+                
                 <div class="contact-item">
                     <div class="contact-icon">🏢</div>
-                    <h3>Office</h3>
-                    <p>Schedule a meeting<br>Office Hours: By Appointment</p>
+                    <h3>Office Hours</h3>
+                    <p>By Appointment<br><a href="#contact">Schedule a Meeting</a></p>
                 </div>
             </div>
         </div>
